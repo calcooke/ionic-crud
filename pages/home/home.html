@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Clonmel Ducklings
+    </ion-title>
+
+    <ion-buttons end>
+      <button navPush="AddPlayerPage" ion-button>Add</button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list *ngFor="let player of playerDb">
+      <!-- navPush="EditPlayerPage" [navParams]="player" -->
+        <ion-list-header>
+        <ion-label>{{player.name}}
+            <button *ngIf="isLoggedIn==false" class="editIcon" item-right clear  navPush="LoginPage" [navParams]="player" > <ion-icon slot="end" size="large" name="create" ></ion-icon></button>
+            <button *ngIf="isLoggedIn==true" class="editIcon" item-right clear  (click)="editPlayer(player)"> <ion-icon slot="end" size="large" name="create" ></ion-icon></button>
+          </ion-label>
+        </ion-list-header>
+        
+        <ion-item>
+          <ion-label><strong>Date of birth: </strong> {{player.dob}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Parent's name: </strong>{{player.parentName}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><strong>Parent's phone no: </strong>{{player.parentPhoneNo}}</ion-label>
+        </ion-item>
+      </ion-list>
+
+  
+</ion-content>

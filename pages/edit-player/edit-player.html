@@ -1,0 +1,54 @@
+
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Edit Player</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <form [formGroup]="editPlayerForm">
+  
+        <ion-label>
+            Name:
+        </ion-label>
+      <ion-item>
+         
+          <ion-input type='text' formControlName='name'></ion-input>
+      </ion-item>
+  
+      <ion-label>
+          Date of birth:
+      </ion-label>
+      <ion-item>
+          
+          <ion-input type='text' formControlName='dob'></ion-input>
+      </ion-item>
+  
+      <ion-label>
+          Parent's name:
+      </ion-label>
+      <ion-item>
+          
+          <ion-input type='text' formControlName='parentName'></ion-input>
+      </ion-item>
+  
+      <ion-label>
+          Parent's phone number:
+      </ion-label>
+      <ion-item>
+          
+          <ion-input type='text' formControlName='parentNo'></ion-input>
+      </ion-item>
+  
+    </form>
+  
+    <!-- <button ion-button(click)='addNewItem()'>Edit</button> -->
+    <button ion-button color="primary" (click)='showConfirmEdit()'>Save</button>
+    <button ion-button color="danger" (click)='showConfirmDelete()'>Delete</button>
+  
+  
+  </ion-content>

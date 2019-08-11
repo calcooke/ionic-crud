@@ -1,0 +1,52 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Player</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="addPlayerForm">
+
+      <ion-label>
+          Name:
+      </ion-label>
+    <ion-item>
+       
+        <ion-input type='text' formControlName='name'></ion-input>
+    </ion-item>
+
+    <ion-label>
+        Date of birth:
+    </ion-label>
+    <ion-item>
+        <ion-datetime displayFormat="MM/DD/YYYY" formControlName='dob'></ion-datetime>
+        <!-- <ion-input type='text' formControlName='dob'></ion-input> -->
+    </ion-item>
+
+    <ion-label>
+        Parent's name:
+    </ion-label>
+    <ion-item>
+        
+        <ion-input type='text' formControlName='parentName'></ion-input>
+    </ion-item>
+
+    <ion-label>
+        Parent's phone number:
+    </ion-label>
+    <ion-item>
+        
+        <ion-input type='text' formControlName='parentNo'></ion-input>
+    </ion-item>
+
+  </form>
+
+  <button ion-button block [disabled]="!addPlayerForm.valid" (click)='addNewItem()'>Add</button>
+
+
+</ion-content>
